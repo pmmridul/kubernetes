@@ -1,0 +1,3 @@
+[submodule "notesapp"]
+	path = notesapp
+	url = https://github.com/pmmridul/notesapp.git
