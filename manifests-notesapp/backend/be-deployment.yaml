@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notesapp-be
+  namespace: notesapp
+  labels:
+    app: notesapp-be
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notesapp-be
+  template:
+    metadata:
+      labels:
+        app: notesapp-be
+    spec:
+      containers:
+        - name: notesapp-be
+          image: pmmridul/notesapp:be-latest
+          imagePullPolicy: Always
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              python manage.py migrate --noinput &&
+              gunicorn --bind 0.0.0.0:8000 notesapp.wsgi --log-level debug
+          envFrom:
+            - secretRef:
+                name: notesapp-be-secrets
+          ports:
+            - containerPort: 8000
+      imagePullSecrets:
+        - name: notesapp-dockerhub-secret

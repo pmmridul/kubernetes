@@ -1,0 +1,9 @@
+{{- if .Values.ingress }}
+  {{- if .Values.ingress.enabled }}
+Your application is accessible at {{ .Values.ingress.host }}
+  {{- else }}
+Ingress is disabled. You can access your app via ClusterIP or LoadBalancer.
+  {{- end }}
+{{- else }}
+Ingress settings are missing. Ensure that ingress configuration is defined in values.yaml.
+{{- end }}

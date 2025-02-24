@@ -1,0 +1,9 @@
+apiVersion: example.com/v1
+kind: Database
+metadata:
+  name: new-postgres-db
+spec:
+  engine: postgres
+  version: "14.1"
+  storage: "10Gi"
+  replicas: 2

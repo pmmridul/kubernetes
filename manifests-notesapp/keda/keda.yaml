@@ -1,0 +1,32 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: notesapp-keda
+  namespace: notesapp
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1 # Default
+    kind: Deployment # Default
+    name: notesapp-be
+  pollingInterval: 30 # Default 30
+  cooldownPeriod: 30 # Default 300
+  minReplicaCount: 1 # Default 0
+  maxReplicaCount: 10 # Default 100
+  triggers:
+    # - type: prometheus
+    #   metadata:
+    #     serverAddress: http://prometheus-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090
+    #     metricName: nginx_service_requests_total
+    #     threshold: "4"
+    #     query: sum(rate(nginx_ingress_controller_requests[1m]))
+    # - type: http
+    # metadata:
+    # scalerAddress: "ingress-nginx-controller.ingress-nginx.svc.cluster.local:10254"
+    # value: "5" # Scale when RPS > 5
+    # query: "nginx_ingress_controller_requests"
+    - type: metrics-api
+      metadata:
+        targetValue: "5" # Scale when the metric value > 5
+        url: "http://nginx-exporter.ingress-nginx.svc.cluster.local/status"
+        valueLocation: "nginx_ingress_controller_requests"
+        # authMode: "none"

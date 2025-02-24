@@ -1,0 +1,19 @@
+replicaCount: 2
+
+frontend:
+  image: nginx:latest
+  containerPort: 80
+  servicePort: 80
+
+backend:
+  image: my-backend:latest
+  containerPort: 3000
+  servicePort: 3000
+
+database:
+  image: postgres:latest
+  containerPort: 5432
+  servicePort: 5432
+  dbName: mydatabase
+  dbUser: myuser
+  dbPassword: mypassword

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notesapp-db
+  namespace: notesapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notesapp-db
+  template:
+    metadata:
+      labels:
+        app: notesapp-db
+    spec:
+      containers:
+        - name: notesapp-db
+          image: postgres:latest
+          envFrom:
+            - secretRef:
+                name: notesapp-db-secrets
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: notesapp-db-storage
+      volumes:
+        - name: notesapp-db-storage
+          persistentVolumeClaim:
+            claimName: notesapp-db-pvc

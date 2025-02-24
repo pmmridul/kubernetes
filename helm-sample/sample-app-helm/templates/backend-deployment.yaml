@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-backend
+spec:
+  replicas: { { .Values.replicaCount } }
+  selector:
+    matchLabels:
+      app: myapp-backend
+  template:
+    metadata:
+      labels:
+        app: myapp-backend
+    spec:
+      containers:
+        - name: backend
+          image: { { .Values.backend.image } }
+          ports:
+            - containerPort: { { .Values.backend.containerPort } }
+          env:
+            - name: DATABASE_URL
+              value: "postgres://{{ .Values.database.dbUser }}:{{ .Values.database.dbPassword }}@myapp-database:{{ .Values.database.servicePort }}/{{ .Values.database.dbName }}"
