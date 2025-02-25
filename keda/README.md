@@ -121,14 +121,14 @@ graph TD
             end
         end
         end
-        style Client fill:#edbe8e,stroke:#333,stroke-width:2px
-        style Ingress fill:#bbf,stroke:#333,stroke-width:2px
-        style Interceptor fill:#bfb,stroke:#333,stroke-width:2px
-        style Proxy fill:#ffb,stroke:#333,stroke-width:2px
-        style Backend fill:#fbb,stroke:#333,stroke-width:2px
-        style Cluster fill:#82b0fa,stroke:#333,stroke-width:2px
-        style KEDA fill:#d7d7d9,stroke:#333,stroke-width:2px
-        style Notesapp fill:#d7d7d9,stroke:#333,stroke-width:2px
-        style **ARCHITECTURE** fill:#fff,stroke:#444,stroke-width:2px
+        style Client fill:#edbe8e,stroke:#333,stroke-width:2px,color:#000
+        style Ingress fill:#bbf,stroke:#333,stroke-width:2px,color:#000
+        style Interceptor fill:#bfb,stroke:#333,stroke-width:2px,color:#000
+        style Proxy fill:#ffb,stroke:#333,stroke-width:2px,color:#000
+        style Backend fill:#fbb,stroke:#333,stroke-width:2px,color:#000
+        style Cluster fill:#82b0fa,stroke:#333,stroke-width:2px,color:#000
+        style KEDA fill:#d7d7d9,stroke:#333,stroke-width:2px,color:#000
+        style Notesapp fill:#d7d7d9,stroke:#333,stroke-width:2px,color:#000
+        style **ARCHITECTURE** fill:#fff,stroke:#444,stroke-width:2px,color:#000
 
 ```
