@@ -111,25 +111,26 @@ graph TD
             Interceptor --> Backend[Backend Service]
 
             subgraph KEDA
-            Interceptor
+                Interceptor
             end
 
             subgraph Notesapp
-            Ingress
-            Proxy
-            Backend
+                Ingress
+                Proxy
+                Backend
             end
         end
-        end
-        style Client fill:#edbe8e,stroke:#333,stroke-width:2px,color:#000
-        style Ingress fill:#bbf,stroke:#333,stroke-width:2px,color:#000
-        style Interceptor fill:#bfb,stroke:#333,stroke-width:2px,color:#000
-        style Proxy fill:#ffb,stroke:#333,stroke-width:2px,color:#000
-        style Backend fill:#fbb,stroke:#333,stroke-width:2px,color:#000
-        style Cluster fill:#82b0fa,stroke:#333,stroke-width:2px,color:#000
-        style KEDA fill:#d7d7d9,stroke:#333,stroke-width:2px,color:#000
-        style Notesapp fill:#d7d7d9,stroke:#333,stroke-width:2px,color:#000
-        style **ARCHITECTURE** fill:#fff,stroke:#444,stroke-width:2px,color:#000
-        linkStyle default stroke:#000,stroke-width:2px,fill:none,arrowheadColor:#000
+    end
+
+    style Client fill:#edbe8e,stroke:#333,stroke-width:2px,color:#000
+    style Ingress fill:#bbf,stroke:#333,stroke-width:2px,color:#000
+    style Interceptor fill:#bfb,stroke:#333,stroke-width:2px,color:#000
+    style Proxy fill:#ffb,stroke:#333,stroke-width:2px,color:#000
+    style Backend fill:#fbb,stroke:#333,stroke-width:2px,color:#000
+    style Cluster fill:#82b0fa,stroke:#333,stroke-width:2px,color:#000
+    style KEDA fill:#d7d7d9,stroke:#333,stroke-width:2px,color:#000
+    style Notesapp fill:#d7d7d9,stroke:#333,stroke-width:2px,color:#000
+    style **ARCHITECTURE** fill:#fff,stroke:#444,stroke-width:2px,color:#000
+    linkStyle default stroke:black,stroke-width:1px
 
 ```
