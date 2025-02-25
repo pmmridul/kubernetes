@@ -1,22 +1,23 @@
 kind: HTTPScaledObject
 apiVersion: http.keda.sh/v1alpha1
 metadata:
-  name: notesapp-http-scaler
+  name: notesapp
+  namespace: notesapp
 spec:
   hosts:
     - notesapp.local
   pathPrefixes:
-    - /
+    - /api/
   scaleTargetRef:
-    name: notesapp-fe
+    name: notesapp-be
     kind: Deployment
     apiVersion: apps/v1
-    service: notesapp-fe-service
-    port: 80
+    service: notesapp-be-service
+    port: 8000
   replicas:
     min: 1
     max: 10
-  scaledownPeriod: 300
+  scaledownPeriod: 30
   scalingMetric:
     requestRate:
       granularity: 1s

@@ -1,3 +1,6 @@
 [submodule "notesapp"]
 	path = notesapp
 	url = https://github.com/pmmridul/notesapp.git
+[submodule "keda/http-add-on"]
+	path = keda/http-add-on
+	url = https://github.com/kedacore/http-add-on.git
