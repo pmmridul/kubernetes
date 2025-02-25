@@ -131,6 +131,6 @@ graph TD
     style KEDA fill:#d7d7d9,stroke:#333,stroke-width:2px,color:#000
     style Notesapp fill:#d7d7d9,stroke:#333,stroke-width:2px,color:#000
     style **ARCHITECTURE** fill:#fff,stroke:#444,stroke-width:2px,color:#000
-    linkStyle default stroke:black,stroke-width:1px
+    linkStyle default stroke:#000,stroke-width:2px
 
 ```
